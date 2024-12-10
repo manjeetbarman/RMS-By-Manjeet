@@ -1,5 +1,6 @@
 from tkinter import*
 from PIL import Image,ImageTk
+from course import CourseClass
 
 class RMS:
     def __init__(self,root):
@@ -20,7 +21,7 @@ class RMS:
         M_Frame=LabelFrame(self.root,text="Menu",font=("times new roman",15),bg="grey")
         M_Frame.place(x=10,y=70,relwidth=1,height=80)
 
-        btn_course=Button(M_Frame,text="Course",font=("goudy old style",15,"bold"),bg="#0b5377",fg="white",cursor="hand2").place(x=20,y=5,width=200,height=40)
+        btn_course=Button(M_Frame,text="Course",font=("goudy old style",15,"bold"),bg="#0b5377",fg="white",cursor="hand2",command=self.add_course).place(x=20,y=5,width=200,height=40)
         btn_student=Button(M_Frame,text="Students",font=("goudy old style",15,"bold"),bg="#0b5377",fg="white",cursor="hand2").place(x=240,y=5,width=200,height=40)
         btn_result=Button(M_Frame,text="Results",font=("goudy old style",15,"bold"),bg="#0b5377",fg="white",cursor="hand2").place(x=460,y=5,width=200,height=40)
         btn_view=Button(M_Frame,text="View Results",font=("goudy old style",15,"bold"),bg="#0b5377",fg="white",cursor="hand2").place(x=680,y=5,width=200,height=40)
@@ -53,6 +54,13 @@ class RMS:
 
         #Footer
         footer=Label(self.root,text="Result Management System By Manjeet\nContact Us:- 7099xxx648",font=("goudy old style",12),bg="#262626",fg="white").pack(side=BOTTOM,fill=X)
+
+
+
+
+    def add_course(self):
+        self.new_win=Toplevel(self.root)
+        self.new_obj=CourseClass(self.new_win)
 
 
 
